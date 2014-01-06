@@ -1100,6 +1100,13 @@ public:
             getLayer()->flags &= ~HWC_SKIP_LAYER;
         }
     }
+    virtual void setAnimating(bool animating) {
+        if (animating) {
+            getLayer()->flags |= HWC_SCREENSHOT_ANIMATOR_LAYER;
+        } else {
+            getLayer()->flags &= ~HWC_SCREENSHOT_ANIMATOR_LAYER;
+        }
+    }
     virtual void setBlending(uint32_t blending) {
         getLayer()->blending = blending;
     }
